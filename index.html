@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="img-div">
+        <img src="images/illustration-woman-online-desktop.svg" alt="" />
+      </div>
+      <div class="content-div">
+        <h1>FAQ</h1>
+
+        <button class="collapse" type="button">
+          <h2>How many team members can I invite?</h2>
+        </button>
+        <div class="content">
+          <p>
+            You can invite up to 2 additional users on the Free plan. There is
+            no limit on team members for the Premium plan.
+          </p>
+        </div>
+
+        <button class="collapse" type="button">
+          <h2>What is the maximum file upload size?</h2>
+        </button>
+        <div class="content">
+          <p>
+            No more than 2GB. All files in your account must fit your allotted
+            storage space.
+          </p>
+        </div>
+        <button class="collapse" type="button">
+          <h2>How do I reset my password?</h2>
+        </button>
+        <div class="content">
+          <p>
+            Click “Forgot password” from the login page or “Change password”
+            from your profile page. A reset link will be emailed to you.
+          </p>
+        </div>
+
+        <button class="collapse" type="button">
+          <h2>Can I cancel my subscription?</h2>
+        </button>
+        <div class="content">
+          <p>
+            Yes! Send us a message and we’ll process your request no questions
+            asked.
+          </p>
+        </div>
+
+        <button class="collapse" type="button">
+          <h2>Do you provide additional support?</h2>
+        </button>
+        <div class="content">
+          <p>
+            Chat and email support is available 24/7. Phone lines are open
+            during normal business hours.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/tushar416">Tushar Mehra</a>.
+    </div>
+
+    <script>
+      var coll = document.getElementsByClassName("collapse");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
