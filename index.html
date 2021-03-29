@@ -88,13 +88,12 @@
     </div>
 
     <script>
-      var coll = document.getElementsByClassName("collapse");
-      var i;
+        let coll = document.getElementsByClassName("collapse");
 
-      for (i = 0; i < coll.length; i++) {
+      for (let i = 0; i < coll.length; i++) {
         coll[i].addEventListener("click", function () {
+          collapseAll();
           this.classList.toggle("active");
-
           var content = this.nextElementSibling;
           if (content.style.maxHeight) {
             content.style.maxHeight = null;
@@ -102,6 +101,15 @@
             content.style.maxHeight = content.scrollHeight + "px";
           }
         });
+      }
+      function collapseAll() {
+        for (let j = 0; j < coll.length; j++) {
+          coll[j].classList.remove("active");
+          let content = coll[j].nextElementSibling;
+          if ((content.style.maxHeight = content.scrollHeight + "px")) {
+            content.style.maxHeight = null;
+          }
+        }
       }
     </script>
   </body>
